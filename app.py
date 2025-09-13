@@ -9,7 +9,7 @@ import numpy as np
 from PIL import Image
 
 # Config via environment
-MODEL_PATH = os.getenv("MODEL_PATH", "waste_classifier.h5")
+MODEL_PATH = os.getenv("MODEL_PATH", "mymodel.h5")
 FRONTEND_URL = os.getenv("FRONTEND_URL")  # set this on Render to your Vercel URL (optional)
 
 # Setup FastAPI
@@ -89,3 +89,4 @@ async def predict(file: UploadFile = File(...)):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", "8000"))
     uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
+
